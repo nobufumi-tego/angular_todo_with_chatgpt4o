@@ -1,0 +1,14 @@
+<div>
+  <h1>ToDoリスト</h1>
+  <textarea [(ngModel)]="newTodoText" placeholder="新しいToDoを追加" (keydown)="handleKeydown($event)"></textarea>
+  <button (click)="addTodo()">追加</button>
+  <ul>
+    <li *ngFor="let todo of todos; let i = index">
+      <div>
+        <strong>{{ todo.text }}</strong>
+        <small>{{ todo.timestamp | date: 'yyyy/MM/dd, HH:mm:ss' }}</small>
+      </div>
+      <button (click)="removeTodo(i)">削除</button>
+    </li>
+  </ul>
+</div>

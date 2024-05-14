@@ -1,6 +1,10 @@
-import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
-import { AppComponent } from './app/app.component';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { enableProdMode, LOCALE_ID } from '@angular/core';
+import { AppModule } from './app/app.module';
+import { registerLocaleData } from '@angular/common';
+import localeJa from '@angular/common/locales/ja';
 
-bootstrapApplication(AppComponent, appConfig)
-  .catch((err) => console.error(err));
+registerLocaleData(localeJa);
+
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.error(err));

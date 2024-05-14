@@ -1,0 +1,76 @@
+// 全体のスタイル
+:host {
+  display: block;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+// タイトル
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+// 入力フィールドとボタン
+textarea {
+  width: calc(100% - 100px);
+  height: 40px; // 必要に応じて高さを調整
+  padding: 0.5rem;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none; // ユーザーによるリサイズを無効化
+}
+
+button {
+  padding: 0.5rem 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+}
+
+// ToDoリスト
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border-bottom: 1px solid #eee;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  small {
+    color: #666;
+  }
+}
+
+// 削除ボタン
+li button {
+  background-color: #dc3545;
+
+  &:hover {
+    background-color: #c82333;
+  }
+}
