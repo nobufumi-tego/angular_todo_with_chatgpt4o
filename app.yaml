@@ -1,0 +1,16 @@
+runtime: nodejs20
+
+handlers:
+  # URLでルートパスのみ指定された場合に
+  # index.html を返すようにマッピングします
+  - url: /
+    static_files: dist/todo-app/browser/index.html
+    upload: dist/todo-app/browser/index.html
+    secure: always
+
+  # URLの正規表現はstatic_dirでは使用でできないので
+  # static_filesを使用します
+  - url: /(.*)
+    static_files: dist/todo-app/\1
+    upload: dist/todo-app/(.*)
+    secure: always
